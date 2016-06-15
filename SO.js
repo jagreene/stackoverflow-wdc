@@ -45,7 +45,7 @@
         var startTime = formatTimeSO(dates.split(':')[0]);
         var endTime = formatTimeSO(dates.split(':')[1]);
 
-        var tagQuery = "taggged=" + tag;
+        var tagQuery = "tagged=" + tag;
         var filterQuery = "filter=total";
         var siteQuery = "site=stackoverflow";
 
