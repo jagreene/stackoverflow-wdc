@@ -59,7 +59,7 @@
             apiCall = "https://api.stackexchange.com/2.2/questions?" + query;
             apiCalls.push({
                 endpoint: apiCall,
-                date: startTime
+                date: new Date(startTime * 1000).toJSON()
             });
             startTime = boundaryTime;
         }
