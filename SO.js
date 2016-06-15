@@ -32,14 +32,18 @@
         schemaCallback(schemas);
     };
 
-    var formatTime = function(time) {
+    var formatTimeSO = function(time) {
         return new Date(time).getTime()/1000;
+    }
+
+    var formatTimeTab = function(time) {
+        return new Date(time*1000).toISOString().slice(0, 10);
     }
 
     var getApiCalls = function(tag){
         var dates = tableau.connectionData.split(';')[1];
-        var startTime = formatTime(dates.split(':')[0]);
-        var endTime = formatTime(dates.split(':')[1]);
+        var startTime = formatTimeSO(dates.split(':')[0]);
+        var endTime = formatTimeSO(dates.split(':')[1]);
 
         var tagQuery = "taggged=" + tag;
         var filterQuery = "filter=total";
@@ -59,7 +63,7 @@
             apiCall = "https://api.stackexchange.com/2.2/questions?" + query;
             apiCalls.push({
                 endpoint: apiCall,
-                date: new Date(startTime * 1000).toJSON()
+                date: formatTimeTab(startTime)
             });
             startTime = boundaryTime;
         }
