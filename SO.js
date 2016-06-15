@@ -22,7 +22,7 @@
 
         schemas = packages.map(function(name){
             return {
-                id: name,
+                id: name.replace(/[^a-zA-Z ]/g, ""),
                 alias: name,
                 columns: cols
 
