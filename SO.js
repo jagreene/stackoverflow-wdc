@@ -57,7 +57,7 @@
 
         console.log("Dates", startTime, ":", endTime);
         while(startTime < endTime){
-            boundaryTime = startTime + (60*60*24);
+            boundaryTime = startTime + (60*60*24*7);
             dateQuery = "fromdate=" + startTime + "&toDate=" + boundaryTime;
             query = dateQuery + "&" + tagQuery + "&" + filterQuery + "&" + siteQuery;
             apiCall = "https://api.stackexchange.com/2.2/questions?" + query;
