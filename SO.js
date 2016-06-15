@@ -15,7 +15,7 @@
         }, {
             id: "date",
             alias: "date",
-            dataType: tableau.dataTypeEnum.string
+            dataType: tableau.dataTypeEnum.date
         }];
 
         var packages = tableau.connectionData.split(";")[0].replace(/\s+/g, '').split(',');
