@@ -105,10 +105,10 @@
             var endDate = $('#endDate').val().trim();
             if (packages && startDate && endDate) {
                 tableau.connectionData = packages + ";" + startDate + ":" + endDate; // Use this variable to pass data to your getSchema and getData functions
-                tableau.connectionName = "NPM Packages"; // This will be the data source name in Tableau
+                tableau.connectionName = "Stack Overflow Tags"; // This will be the data source name in Tableau
                 tableau.submit(); // This sends the connector object to Tableau
             } else {
-                alert("Enter a valid date for each date range and packages.");
+                alert("Enter a valid date for each date range and tag.");
             }
         });
     });
