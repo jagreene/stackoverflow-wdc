@@ -29,7 +29,7 @@
             }
         })
 
-        schemaCallback(schemas);
+        schemaCallback(JSON.parse(JSON.stringify(schemas)));
     };
 
     var formatTimeSO = function(time) {
